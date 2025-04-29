@@ -1,0 +1,87 @@
+<div class="contenido-ahorcado">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="ahorcado-container">
+                @if (intentos === 0) {
+                    <img class="img-fluid" src="assets/images/ahorcado0.png" alt="Estado del ahorcado">
+                } @else if (intentos === 1) {
+                    <img class="img-fluid" src="assets/images/ahorcado1.png" alt="Estado del ahorcado">
+                } @else if (intentos === 2) {
+                    <img class="img-fluid" src="assets/images/ahorcado2.png" alt="Estado del ahorcado">
+                } @else if (intentos === 3) {
+                    <img class="img-fluid" src="assets/images/ahorcado3.png" alt="Estado del ahorcado">
+                } @else if (intentos === 4) {
+                    <img class="img-fluid" src="assets/images/ahorcado4.png" alt="Estado del ahorcado">
+                } @else if (intentos === 5) {
+                    <img class="img-fluid" src="assets/images/ahorcado5.png" alt="Estado del ahorcado">
+                } @else {
+                    <img class="img-fluid" src="assets/images/ahorcado6.png" alt="Estado del ahorcado">
+                }
+            </div>
+        </div>
+        <div class="col-sm-4 mt-4">
+            <div class="row">
+                @for (letra of letrasAdivinadas; track letra) {
+                    <div class="col-sm-1 btn w-10 bg-primary">
+                        {{letra}}
+                    </div>
+                }
+            </div>
+            
+            <div class="mt-3">
+                <button class="btn bg-success" (click)="iniciarJuego()">JUGAR DE NUEVO</button>
+            </div>
+            
+            <p class="mt-3">Intentos restantes: {{maxIntentos - intentos}}</p>
+            
+            @if (mensaje) {
+                <div class="alert alert-info mt-3">
+                    {{mensaje}}
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="abecedario">
+    <div class="row mb-2">
+        @for (letra of ['A','B','C','D','E','F','G','H','I','J','K']; track letra) {
+            <div class="col-sm-1 btn-group">
+                <button type="button" 
+                        class="btn btn-info teclado" 
+                        [disabled]="juegoTerminado"
+                        (click)="verificarLetra(letra)">
+                    {{letra}}
+                </button>
+            </div>
+        }
+    </div>
+
+    <div class="row mb-2">
+        @for (letra of ['L','M','N','O','P','Q','R','S','T','U','V']; track letra) {
+            <div class="col-sm-1 btn-group">
+                <button type="button" 
+                        class="btn btn-info teclado" 
+                        [disabled]="juegoTerminado"
+                        (click)="verificarLetra(letra)">
+                    {{letra}}
+                </button>
+            </div>
+        }
+    </div>
+
+    <div class="row mb-2">
+        @for (letra of ['W','X','Y','Z']; track letra) {
+            <div class="col-sm-1 btn-group">
+                <button type="button" 
+                        class="btn btn-info teclado" 
+                        [disabled]="juegoTerminado"
+                        (click)="verificarLetra(letra)">
+                    {{letra}}
+                </button>
+            </div>
+        }
+    </div>
+</div>
+
+

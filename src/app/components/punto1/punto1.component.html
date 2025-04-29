@@ -1,0 +1,16 @@
+<div class="contenido ">
+    <div class="slider row ">
+        <img class="img-fluid" src={{noticias[indice].src}} alt="">
+        <figure class="slider-row" id="img{{indice+1}}">
+            <h3 class="titulo">{{noticias[indice].titulo}}</h3>
+            <p class="descripcion">{{noticias[indice].descripcion}}</p>    
+        </figure>     
+    </div>
+</div>
+<div class="contenido-botones">
+    <div class="botones ">
+        <input class="anterior"  type="button" value="anterior" (click) = "anterior(indice)">
+        <input  class="siguiente" type="button" value="siguiente" (click) = "siguiente(indice)">
+    </div>
+</div>
+
