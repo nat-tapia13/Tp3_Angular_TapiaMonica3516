@@ -1,18 +1,12 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-models',
-//   imports: [],
-//   templateUrl: './models.component.html',
-//   styleUrls: ['./models.component.css']
-// })
 export class Noticia {
-  titulo!: string;
+  titulo: string;
   descripcion!: string;
   src!: string;
-
+  
   constructor(){
-
+    this.titulo = " ";
+    this.descripcion =" ";
+    this.src= "img";
   }
 
 }

@@ -1,16 +1,21 @@
-<div class="contenido ">
-    <div class="slider row ">
-        <img class="img-fluid" src={{noticias[indice].src}} alt="">
-        <figure class="slider-row" id="img{{indice+1}}">
-            <h3 class="titulo">{{noticias[indice].titulo}}</h3>
-            <p class="descripcion">{{noticias[indice].descripcion}}</p>    
-        </figure>     
+<div class="container">
+    <h1 class="noticia mt-5 text-center">Nuestras Últimas Noticias</h1>
+    <div class="slider row mt-5 text-center">
+        @for (noticia of noticias; track noticia.src; let i = $index) {
+            <div class="slide" [ngClass]="{'active': i === indice}">
+                <img class="img-fluid" [src]="noticia.src" alt="{{ noticia.titulo }}">
+                <figure>
+                    <h3>{{ noticia.titulo }}</h3>
+                    <p>{{ noticia.descripcion }}</p>
+                </figure>
+            </div>
+        }
     </div>
-</div>
-<div class="contenido-botones">
-    <div class="botones ">
-        <input class="anterior"  type="button" value="anterior" (click) = "anterior(indice)">
-        <input  class="siguiente" type="button" value="siguiente" (click) = "siguiente(indice)">
+    <div class="contenido-botones">
+        <div class="botones">
+            <button class="anterior" (click)="anterior(indice)">Anterior</button>
+            <button class="siguiente" (click)="siguiente(indice)">Siguiente</button>
+        </div>
     </div>
 </div>
 

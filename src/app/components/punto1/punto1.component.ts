@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Noticia } from '../../models/noticia';
 
 @Component({
   standalone: true,
   selector: 'app-punto1',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './punto1.component.html',
-  styleUrls: ['./punto1.component.css']
+  styleUrl: './punto1.component.css',
 })
-export class Punto1Component implements OnInit {
+export class Punto1Component {
   noticia: Noticia = new Noticia;
   
   noticias = [
-    {titulo: "sbsbsbbsjsbsbjjs", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "../../assets/images/noti1.png"},
-    {titulo: "sbsbsbbsjsbsbjjs", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "../../assets/images/noti2.jpg"},
-    {titulo: "sbsbsbbsjsbsbjjs", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "../../assets/images/noti3.jpg"},
-    {titulo: "sbsbsbbsjsbsbjjs", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "../../assets/images/noti4.jpg"}
+    {titulo: "Titulo01", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "src/app/assets/images/noticia1.jpg"},
+    {titulo: "Titulo02", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "src/app/assets/images/noticia2.jpg"},
+    {titulo: "Titulo03", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "src/app/assets/images/noticia3.jpg"},
+    {titulo: "Titulo04", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "src/app/assets/images/noticia4.jpg"}
   ];
   
   indice = 0;
@@ -39,7 +40,7 @@ export class Punto1Component implements OnInit {
     }
     this.indice = indice;
   }
-
+  
   ngOnInit(): void {
   }
 }
