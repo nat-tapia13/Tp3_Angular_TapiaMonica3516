@@ -3,7 +3,7 @@
     <div class="slider row mt-5 text-center">
         @for (noticia of noticias; track noticia.src; let i = $index) {
             <div class="slide" [ngClass]="{'active': i === indice}">
-                <img class="img-fluid" [src]="noticia.src" alt="{{ noticia.titulo }}">
+                <img class="img-fluid img-div" [src]="noticia.src" alt="{{ noticia.titulo }}">
                 <figure>
                     <h3>{{ noticia.titulo }}</h3>
                     <p>{{ noticia.descripcion }}</p>

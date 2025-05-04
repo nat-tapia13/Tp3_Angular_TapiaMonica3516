@@ -1,15 +1,71 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Productos Destacados</h1>
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
+  <div class="title text-center mt-3 mb-3">
+    <h1> Lista de Productos</h1>
+  </div>
+  <div class="row">
+    @for (producto of productos; let i= $index;track i) {
+      <div class="col-12 col-sm-4 col-md-3 col-lg-4 mb-3 mt-3">
+        <div class="card" style="width: 18rem;">
+          <img [src]="producto.src" class="card-img-top" alt="{{ producto.nombre }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ producto.nombre }}</h5>
+            <p class="card-descripcion">{{ producto.descripcion}}</p>
+            <p class="card-text">Precio: ${{ producto.precio }}</p>
+            <button class="btn btn-outline-primary" (click)="agregarAlCarrito(producto)" data-bs-toggle="modal" data-bs-target="#modalConfirmacion">
+              <i class="bi bi-cart">Agregar al Carrito</i> 
+            </button>
+          </div>
         </div>
+      </div>
+    }
+    @empty {
+      <p class="text-center">No hay productos disponibles.</p>
+    }
+
+          <!-- Modal de Bootstrap para informarle al usuario que el producto fue agregado al carrito -->
+  <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-labelledby="modalConfirmacionLabel" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalConfirmacionLabel">Producto agregado con exito</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+         <p>{{ mensajeDeConfirmacion }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Finalizar Compra</button>
+        </div>
+     </div>
+   </div> 
+ </div>
+  <!-- Modal de Bootstrap -->
+ <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCarritoLabel">Carrito de Compras</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+       <ul class="list-group">
+         @for (producto of carrito; track producto.nombre) {
+           <li class="list-group-item d-flex justify-content-between align-items-center">
+             {{ producto.nombre }} - ${{ producto.precio }}
+           </li>
+         }
+       </ul>
+        <p><strong>Total:</strong>${{actualizarTotal()}}</p>
+       </div>
     </div>
+  </div>
+</div>
+<div class="text-center">
+<button class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#modalCarrito">Ver Carrito</button>
+  </div>
+
+  <!-- Botón para abrir el modal -->
+ 
+
 </div>

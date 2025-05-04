@@ -1,12 +1,12 @@
 export class Noticia {
   titulo: string;
   descripcion!: string;
-  src!: string;
+  imagen!: string;
   
   constructor(){
     this.titulo = " ";
     this.descripcion =" ";
-    this.src= "img";
+    this.imagen= "img";
   }
 
 }

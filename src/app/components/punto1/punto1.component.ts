@@ -13,10 +13,10 @@ export class Punto1Component {
   noticia: Noticia = new Noticia;
   
   noticias = [
-    {titulo: "Titulo01", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "src/app/assets/images/noticia1.jpg"},
-    {titulo: "Titulo02", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "src/app/assets/images/noticia2.jpg"},
-    {titulo: "Titulo03", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "src/app/assets/images/noticia3.jpg"},
-    {titulo: "Titulo04", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "src/app/assets/images/noticia4.jpg"}
+    {titulo: "Titulo01", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "./assets/images/noticia1.jpg"},
+    {titulo: "Titulo02", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "./assets/images/noticia2.jpg"},
+    {titulo: "Titulo03", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "./assets/images/noticia3.jpg"},
+    {titulo: "Titulo04", descripcion: "bbcbebcejbc ebciejcjsbsjuiuwebciwuiu wj jbcjjwbjvhwbjw.", src: "./assets/images/noticia4.jpg"}
   ];
   
   indice = 0;
